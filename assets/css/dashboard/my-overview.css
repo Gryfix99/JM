@@ -1,0 +1,322 @@
+/* =========================================
+   MY OVERVIEW SPECIFIC
+   ========================================= */
+
+.pjm-overview-container {
+    animation: fadeIn 0.4s ease-out;
+}
+
+/* --- 1. HERO SECTION --- */
+.overview-hero-section {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Karta Portfela */
+.wallet-hero-card {
+    background: linear-gradient(135deg, var(--pjm-dark) 0%, #34495e 100%);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    color: var(--pjm-white);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 0 8px 20px rgba(44, 62, 80, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+    min-height: 160px;
+}
+
+.wallet-hero-card::after {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    width: 100px;
+    height: 100px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+}
+
+.wallet-content {
+    display: flex;
+    align-items: flex-start;
+    gap: 20px;
+    margin-bottom: 20px;
+    z-index: 2;
+}
+
+.wallet-icon-circle {
+    width: 48px;
+    height: 48px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--pjm-orange);
+    flex-shrink: 0;
+}
+
+/* Teksty wewnątrz Hero (Uzupełnione) */
+.wallet-text .label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    opacity: 0.7;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.balance-wrapper {
+    display: flex;
+    align-items: baseline;
+    gap: 5px;
+}
+
+.balance-amount {
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.currency {
+    font-size: 14px;
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.wallet-actions {
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+    margin-top: auto;
+}
+
+/* Karta Info */
+.info-hero-card {
+    background: var(--pjm-white);
+    border-radius: var(--radius-lg);
+    padding: 24px;
+    border: 1px solid var(--pjm-border);
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-sm);
+}
+
+.info-icon-circle {
+    width: 54px;
+    height: 54px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 26px;
+    flex-shrink: 0;
+}
+
+.info-icon-circle.purple {
+    background: #F3E5F5;
+    color: #9C27B0;
+}
+
+.info-icon-circle.blue {
+    background: var(--pjm-info-bg);
+    color: var(--pjm-info);
+}
+
+/* Teksty w Info Card (Uzupełnione) */
+.info-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.info-text .label {
+    font-size: 13px;
+    color: var(--pjm-gray-light);
+    margin-bottom: 4px;
+}
+
+.info-text strong {
+    font-size: 18px;
+    color: var(--pjm-dark);
+    font-weight: 700;
+}
+
+/* --- 2. AKCJE (ACTION GRID) --- */
+.section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--pjm-dark);
+    margin-bottom: 20px;
+}
+
+.pjm-action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.pjm-action-box {
+    background: var(--pjm-white);
+    border: 1px solid var(--pjm-border);
+    border-radius: 16px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    text-decoration: none !important;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+}
+
+.pjm-action-box:hover {
+    border-color: var(--pjm-orange);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
+}
+
+.ab-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.ab-icon .material-symbols-rounded {
+    font-size: 24px;
+}
+
+.ab-icon.blue {
+    background: var(--pjm-info-bg);
+    color: var(--pjm-info);
+}
+
+.ab-icon.purple {
+    background: #F3E5F5;
+    color: #7B1FA2;
+}
+
+.ab-icon.orange {
+    background: var(--pjm-warning-bg);
+    color: #EF6C00;
+}
+
+.pjm-action-box.highlight {
+    background: linear-gradient(to bottom right, #ffffff, #fffdf5);
+    border-color: #ffe0b2;
+}
+
+/* Wnętrze kafelka akcji (Uzupełnione) */
+.ab-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.ab-content h4 {
+    margin: 0;
+    font-size: 15px;
+    color: var(--pjm-dark);
+    font-weight: 700;
+}
+
+.ab-content p {
+    margin: 4px 0 0 0;
+    font-size: 12px;
+    color: var(--pjm-gray-light);
+    line-height: 1.4;
+}
+
+.ab-arrow {
+    color: var(--pjm-border);
+    font-size: 20px;
+    transition: 0.2s;
+}
+
+.pjm-action-box:hover .ab-arrow {
+    color: var(--pjm-orange);
+    transform: translateX(4px);
+}
+
+/* --- 3. TABELA OSTATNICH ZAMÓWIEŃ (RECENT ORDERS) --- */
+.pjm-recent-orders-wrapper {
+    margin-top: 20px;
+}
+
+.flex-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.link-view-all {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--pjm-orange);
+    transition: 0.2s;
+    text-decoration: none;
+}
+
+.link-view-all:hover {
+    color: var(--pjm-orange-hover);
+    text-decoration: underline;
+}
+
+/* Specyfika karty tabeli */
+.pjm-card.no-padding {
+    padding: 0;
+    overflow: hidden;
+    background: var(--pjm-white);
+    border: 1px solid var(--pjm-border);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Klasy pomocnicze w tabeli */
+.empty-state-row {
+    text-align: center;
+    padding: 40px !important;
+    color: var(--pjm-gray-light);
+    font-size: 14px;
+}
+
+.empty-state-row .material-symbols-rounded {
+    display: block;
+    font-size: 32px;
+    margin: 0 auto 10px auto;
+    opacity: 0.5;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.font-bold {
+    font-weight: 700;
+}
+
+/* --- 4. RESPONSYWNOŚĆ --- */
+@media (max-width: 768px) {
+    .overview-hero-section {
+        grid-template-columns: 1fr;
+    }
+
+    .wallet-hero-card {
+        min-height: auto;
+    }
+
+    .pjm-action-grid {
+        grid-template-columns: 1fr;
+    }
+}

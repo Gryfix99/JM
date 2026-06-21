@@ -1,0 +1,84 @@
+{
+  "calculator_info": {
+    "id": "loop_rental",
+    "name": "Wynajem Pętli Indukcyjnej"
+  },
+  "pricing_rules": {
+    "unit_name": "dzień",
+    "deposit_required": false
+  },
+  "packages": [
+    {
+      "id": "tier_1_day",
+      "name": "1 dzień",
+      "subtitle": "Krótki wynajem",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [1, 1],
+      "unit_label": "cena za dobę",
+      "features": [
+        { "icon": "wifi", "text": "Pętla indukcyjna", "subtext": "Do 150 m²" }
+      ],
+      "config": {
+        "rate_per_unit": 1600,
+        "tier_base_cost": 0,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_2_days",
+      "name": "2 dni",
+      "subtitle": "Wydarzenia dwudniowe",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [2, 2],
+      "unit_label": "cena za dobę",
+      "features": [
+        { "icon": "wifi", "text": "Pętla indukcyjna", "subtext": "Do 150 m²" },
+        {"icon": "trending_down","text": "Taniej przy dłuższym wynajmie", "subtext": "2. dzień – 1500 zł, kolejne jeszcze taniej"}
+      ],
+      "config": {
+        "rate_per_unit": 1500,
+        "tier_base_cost": 1600,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_3_days",
+      "name": "3 dni",
+      "subtitle": "Średnie wydarzenia",
+      "badge": null,
+      "is_featured": true,
+      "unit_range": [3, 3],
+      "unit_label": "cena za dobę",
+      "features": [
+        { "icon": "wifi", "text": "Pętla indukcyjna", "subtext": "Do 150 m²" },
+        {"icon": "trending_down","text": "Taniej przy dłuższym wynajmie", "subtext": "3. dzień – 1400 zł, kolejne jeszcze taniej"}
+      ],
+      "config": {
+        "rate_per_unit": 1400,
+        "tier_base_cost": 3100,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_4plus_days",
+      "name": "4 dni i więcej",
+      "subtitle": "Długie wydarzenia",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [4, 999],
+      "unit_label": "cena za dobę",
+      "features": [
+        { "icon": "wifi", "text": "Pętla indukcyjna", "subtext": "Do 150 m²" },
+        {"icon": "trending_down","text": "Taniej przy dłuższym wynajmie", "subtext": "4. dzień i koejne – 1200 zł/dzień"},
+        { "icon": "engineering", "text": "Obsługa technika", "subtext": "Pełne wsparcie podczas całego wydarzebnia" }
+      ],
+      "config": {
+        "rate_per_unit": 1200,
+        "tier_base_cost": 4500,
+        "free_addons": ["loop_service_day"]
+      }
+    }
+  ]
+}

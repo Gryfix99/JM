@@ -1,0 +1,89 @@
+/* =========================================
+   MY WALLET SPECIFIC
+   ========================================= */
+
+.pjm-wallet-header {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px;
+    margin-bottom: 40px;
+}
+
+/* Karta Salda */
+.balance-card {
+    background: linear-gradient(135deg, var(--pjm-dark) 0%, #16241D 100%);
+    color: #fff;
+    border: none;
+    position: relative;
+    overflow: hidden;
+}
+
+.balance-card .card-value {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 25px;
+}
+
+.balance-card .bg-icon {
+    position: absolute;
+    right: -20px;
+    bottom: -30px;
+    opacity: 0.1;
+}
+
+.balance-card .bg-icon .material-symbols-rounded {
+    font-size: 180px;
+    color: #fff;
+}
+
+/* Karta Info (Przelicznik) */
+.exchange-rate-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.exchange-rate-list li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+    font-size: 14px;
+    color: var(--pjm-dark);
+}
+
+.exchange-rate-list li .material-symbols-rounded {
+    color: var(--pjm-orange);
+    background: var(--pjm-warning-bg);
+    padding: 6px;
+    border-radius: 50%;
+    font-size: 18px;
+}
+
+/* Historia Transakcji */
+.trans-in {
+    color: var(--pjm-success);
+}
+
+.trans-out {
+    color: var(--pjm-error);
+}
+
+.amount-plus {
+    color: var(--pjm-success);
+    background: var(--pjm-success-bg);
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-family: monospace;
+}
+
+.amount-minus {
+    color: var(--pjm-dark);
+    font-family: monospace;
+}
+
+@media (max-width: 992px) {
+    .pjm-wallet-header {
+        grid-template-columns: 1fr;
+    }
+}

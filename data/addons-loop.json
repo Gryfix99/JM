@@ -1,0 +1,32 @@
+{
+  "calculator_type": "loop",
+  "items": [
+    {
+      "id": "loop_tester",
+      "name": "Tester pętli",
+      "description": "Słuchawka do weryfikacji działania pętli",
+      "price": 50,
+      "price_mode": "flat",
+      "input_type": "checkbox",
+      "max_quantity": 1
+    },
+    {
+      "id": "audio_mic",
+      "name": "Mikrofon bezprzewodowy",
+      "description": "Do ręki lub nagłowny",
+      "price": 200,
+      "price_mode": "flat",
+      "input_type": "counter",
+      "max_quantity": 2
+    },
+    {
+      "id": "loop_service_day",
+      "name": "Montaż i obsługa techniczna",
+      "description": "Wsparcie technika na miejscu",
+      "price": 200,
+      "price_mode": "per_unit",
+      "input_type": "checkbox",
+      "max_quantity": 1
+    }
+  ]
+}

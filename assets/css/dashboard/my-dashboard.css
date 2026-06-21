@@ -1,0 +1,658 @@
+/* =========================================
+   PJM DASHBOARD CORE (Layout & Shared)
+   ========================================= */
+
+/* 1. IMPORTY MODUŁÓW */
+@import 'my-account.css';
+@import 'my-checkout.css';
+@import 'my-orders.css';
+@import 'my-overview.css';
+@import 'my-settings.css';
+@import 'my-subscription.css';
+@import 'my-wallet.css';
+@import 'my-calculator.css';
+@import 'my-admin.css';
+
+/* =========================================
+   2. ZMIENNE GLOBALNE (Theme Variables)
+   ========================================= */
+:root {
+    /* Layout */
+    --sidebar-width: 280px;
+    --topbar-height: 80px;
+
+    /* Kolory Brandowe */
+    --pjm-orange: #1B5E4B;
+    --pjm-orange-hover: #154A3B;
+    --pjm-dark: #16241D;
+
+    /* Teksty */
+    --pjm-gray-text: #555555;
+    --pjm-gray-light: #999999;
+
+    /* UI Elementy */
+    --pjm-border: #E0E0E0;
+    --pjm-bg-light: #F8F9FA;
+    --pjm-white: #FFFFFF;
+
+    /* Statusy */
+    --pjm-success: #27ae60;
+    --pjm-success-bg: #eafaf1;
+    --pjm-error: #e74c3c;
+    --pjm-error-bg: #fdedec;
+    --pjm-warning: #f1c40f;
+    --pjm-warning-bg: #fff8e1;
+    --pjm-info: #3498db;
+    --pjm-info-bg: #e3f2fd;
+
+    /* Efekty */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.2s ease-in-out;
+}
+
+/* =========================================
+   3. LAYOUT GŁÓWNY
+   ========================================= */
+.pjm-dashboard-wrapper {
+    background-color: var(--pjm-bg-light);
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: var(--sidebar-width) 1fr;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--pjm-gray-text);
+}
+
+/* --- SIDEBAR --- */
+.pjm-sidebar {
+    background-color: var(--pjm-white);
+    border-right: 1px solid var(--pjm-border);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    z-index: 100;
+    overflow-y: auto;
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.02);
+}
+
+.pjm-brand {
+    margin-bottom: 40px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding-left: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    color: var(--pjm-dark);
+}
+
+.pjm-brand .logo-icon {
+    font-size: 32px;
+    color: var(--pjm-orange);
+}
+
+.pjm-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.pjm-nav a {
+    display: flex;
+    align-items: center;
+    padding: 12px 16px;
+    color: var(--pjm-gray-text);
+    text-decoration: none !important;
+    border-radius: var(--radius-md);
+    transition: var(--transition);
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.pjm-nav a .material-symbols-rounded {
+    margin-right: 12px;
+    font-size: 24px;
+    color: var(--pjm-gray-light);
+    transition: var(--transition);
+}
+
+.pjm-nav a:hover {
+    background-color: #eef5f1;
+    color: #16241D;
+}
+
+.pjm-nav a:hover .material-symbols-rounded {
+    color: #1B5E4B;
+}
+
+/* Dostępność: wyraźny focus dla nawigacji klawiaturą (WCAG 2.4.7) */
+.pjm-nav a:focus-visible {
+    outline: 3px solid #E0A33E;
+    outline-offset: 2px;
+}
+
+.pjm-nav li.active a {
+    background-color: #1B5E4B;
+    color: #ffffff;
+    box-shadow: 0 6px 16px rgba(27, 94, 75, 0.25);
+}
+
+.pjm-nav li.active a .material-symbols-rounded {
+    color: #E0A33E;
+}
+
+.pjm-nav li.active a .link-text { font-weight: 600; }
+
+.nav-spacer {
+    flex: 1;
+}
+
+.nav-bottom {
+    margin-top: auto;
+    padding-top: 20px;
+    border-top: 1px solid var(--pjm-border);
+    list-style: none;
+    padding-left: 0;
+}
+
+.logout-item a {
+    color: var(--pjm-error);
+    font-weight: 600;
+}
+
+.logout-item a:hover {
+    background-color: var(--pjm-error-bg);
+}
+
+.logout-item a .material-symbols-rounded {
+    color: var(--pjm-error);
+}
+
+/* --- CONTENT AREA --- */
+.pjm-content {
+    padding: 32px 40px;
+    overflow-y: auto;
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+/* TOPBAR */
+.pjm-topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    background: var(--pjm-white);
+    padding: 15px 25px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--pjm-border);
+    box-shadow: var(--shadow-sm);
+}
+
+.pjm-welcome h2 {
+    color: var(--pjm-dark);
+    margin: 0;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.pjm-welcome .subtitle {
+    font-size: 13px;
+    color: var(--pjm-gray-light);
+    margin-top: 2px;
+    display: block;
+}
+
+.pjm-user-profile {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.user-plan-badge {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 14px;
+    border-radius: 8px;
+    background: var(--pjm-bg-light);
+    border: 1px solid transparent;
+}
+
+.user-plan-badge.plan-active {
+    background: var(--pjm-success-bg);
+    border-color: rgba(39, 174, 96, 0.2);
+    color: var(--pjm-success);
+}
+
+.plan-details {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+
+.plan-label {
+    font-size: 10px;
+    text-transform: uppercase;
+    font-weight: 700;
+    opacity: 0.7;
+}
+
+.plan-name {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.user-divider {
+    width: 1px;
+    height: 35px;
+    background-color: var(--pjm-border);
+}
+
+.user-info-block {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-align: right;
+}
+
+.u-name {
+    display: block;
+    font-weight: 700;
+    color: var(--pjm-dark);
+    font-size: 14px;
+}
+
+.u-role {
+    font-size: 11px;
+    color: var(--pjm-gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.pjm-avatar img {
+    border-radius: 50%;
+    border: 2px solid var(--pjm-white);
+    box-shadow: 0 0 0 1px var(--pjm-border);
+    width: 42px;
+    height: 42px;
+    object-fit: cover;
+}
+
+/* =========================================
+   4. GLOBALNE KOMPONENTY (Shared)
+   ========================================= */
+
+/* Karta */
+.pjm-card,
+.account-card,
+.settings-card,
+.wallet-card {
+    background: var(--pjm-white);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--pjm-border);
+    box-shadow: var(--shadow-sm);
+    padding: 30px;
+    margin-bottom: 24px;
+}
+
+/* Inputy formularzy */
+.pjm-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--pjm-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    font-family: inherit;
+    transition: var(--transition);
+    background: #fff;
+    color: var(--pjm-dark);
+    box-sizing: border-box;
+}
+
+.pjm-input:focus {
+    border-color: var(--pjm-orange);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(27, 94, 75, 0.1);
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 6px;
+    color: var(--pjm-dark);
+}
+
+/* Przyciski */
+.btn-primary,
+.jm-order-btn,
+.save-btn {
+    background: var(--pjm-orange);
+    color: #fff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary:hover,
+.jm-order-btn:hover,
+.save-btn:hover {
+    background: var(--pjm-orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(27, 94, 75, 0.2);
+}
+
+/* Pusty stan */
+.pjm-empty-state {
+    text-align: center;
+    padding: 80px 20px;
+    color: var(--pjm-gray-light);
+    background: var(--pjm-white);
+    border-radius: var(--radius-lg);
+    border: 2px dashed var(--pjm-border);
+}
+
+.pjm-empty-state .material-symbols-rounded {
+    font-size: 64px;
+    margin-bottom: 20px;
+    opacity: 0.5;
+    color: var(--pjm-orange);
+}
+
+/* Animacja FadeIn */
+.pjm-fade-in {
+    animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* =========================================
+   5. RESPONSYWNOŚĆ (Mobile Bottom App Bar)
+   ========================================= */
+
+/* Elementy mobilne (domyślnie ukryte na desktopie) */
+.pjm-mobile-header,
+.pjm-overlay,
+.pjm-close-btn {
+    display: none;
+}
+
+@media (max-width: 992px) {
+
+    /* Układ główny */
+    .pjm-dashboard-wrapper {
+        grid-template-columns: 1fr;
+        padding-top: 20px;
+        /* Reset góry */
+        padding-bottom: 90px;
+        /* Miejsce na dolny pasek + bezpieczny margines */
+    }
+
+    /* --- PASEK DOLNY (BOTTOM APP BAR) --- */
+    .pjm-mobile-header {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        position: fixed;
+        top: auto;
+        /* Wyłączamy górę */
+        bottom: 0;
+        /* Przyklejamy do dołu */
+        left: 0;
+        right: 0;
+        height: 60px;
+        /* Bazowa wysokość */
+        background: var(--pjm-white);
+        border-top: 1px solid var(--pjm-border);
+        /* Linia na górze paska */
+        border-bottom: none;
+        padding: 0 20px;
+        z-index: 900;
+        /* Cień skierowany w górę */
+        box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.08);
+
+        /* Obsługa iPhone X+ (Home Indicator) - kluczowe dla dolnego paska! */
+        padding-bottom: env(safe-area-inset-bottom);
+        box-sizing: content-box;
+        /* Żeby padding nie zmniejszał wysokości 60px */
+    }
+
+    /* Przycisk Menu (Hamburger) */
+    .pjm-hamburger {
+        background: var(--pjm-bg-light);
+        border: none;
+        color: var(--pjm-dark);
+        font-size: 24px;
+        cursor: pointer;
+        width: 42px;
+        height: 42px;
+        border-radius: 12px;
+        /* Lekko zaokrąglony kwadrat */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+    }
+
+    .pjm-hamburger:active {
+        background: #e0e0e0;
+    }
+
+    /* Logo/Nazwa na środku paska */
+    .pjm-brand-mobile {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        color: var(--pjm-dark);
+    }
+
+    .pjm-brand-mobile .logo-icon {
+        color: var(--pjm-orange);
+        font-size: 22px;
+    }
+
+    /* Awatar po prawej */
+    .pjm-mobile-avatar img {
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        border: 2px solid var(--pjm-white);
+        box-shadow: 0 0 0 1px var(--pjm-border);
+        display: block;
+    }
+
+    /* --- SIDEBAR (SZUFLADA Z BOKU) --- */
+    .pjm-sidebar {
+        position: fixed;
+        top: 0;
+        left: -285px;
+        /* Schowany */
+        width: 280px;
+        /* Pełna wysokość ekranu */
+        height: 100vh;
+        height: 100dvh;
+        z-index: 1000;
+        /* Nad dolnym paskiem */
+        transition: left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border-right: 1px solid var(--pjm-border);
+        box-shadow: 10px 0 30px rgba(0, 0, 0, 0.15);
+        /* Mocniejszy cień żeby odróżnić od tła */
+
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        background: var(--pjm-white);
+    }
+
+    .pjm-sidebar.open {
+        left: 0;
+    }
+
+    /* --- ELEMENTY WEWNĄTRZ SIDEBARA --- */
+
+    /* 1. Header szuflady */
+    .pjm-sidebar .pjm-brand {
+        display: flex;
+        padding: 25px 24px;
+        /* Większy padding góra */
+        border-bottom: 1px solid var(--pjm-border);
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    .pjm-close-btn {
+        display: block;
+        position: absolute;
+        top: 22px;
+        right: 20px;
+        background: #f5f5f5;
+        border: none;
+        color: var(--pjm-dark);
+        cursor: pointer;
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+    }
+
+    /* 2. Nawigacja */
+    .pjm-nav {
+        display: flex;
+        flex-direction: column;
+        flex-grow: 1;
+        overflow: hidden;
+    }
+
+    .pjm-nav ul {
+        flex-direction: column;
+        padding: 20px;
+        gap: 8px;
+        overflow-y: auto;
+        flex-grow: 1;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pjm-nav a {
+        flex-direction: row;
+        justify-content: flex-start;
+        text-align: left;
+        font-size: 15px;
+        /* Nieco większa czcionka na mobile */
+        padding: 14px 16px;
+        /* Większe pola dotykowe */
+        background: transparent;
+    }
+
+    .pjm-nav a .material-symbols-rounded {
+        margin-right: 14px;
+        margin-bottom: 0;
+        font-size: 26px;
+    }
+
+    .pjm-nav li.active a {
+        background-color: var(--pjm-dark);
+        color: var(--pjm-white);
+    }
+
+    .nav-spacer {
+        display: none;
+    }
+
+    /* 3. Stopka (Logout) */
+    .nav-bottom {
+        flex-shrink: 0;
+        margin-top: auto;
+        padding: 20px 24px;
+        border-top: 1px solid var(--pjm-border);
+        background: var(--pjm-bg-light);
+        padding-bottom: calc(20px + env(safe-area-inset-bottom));
+    }
+
+    /* --- TŁO (OVERLAY) --- */
+    .pjm-overlay {
+        display: block;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        /* Ciemniejsze tło dla lepszego skupienia */
+        z-index: 950;
+        /* Pod sidebarem (1000), ale nad dolnym paskiem (900) */
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        backdrop-filter: blur(3px);
+        /* Efekt rozmycia tła */
+    }
+
+    .pjm-overlay.active {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* --- DOSTOSOWANIE TREŚCI --- */
+    .pjm-content {
+        padding: 10px 15px;
+    }
+
+    /* Uproszczony topbar (ten wewnątrz treści), bo mamy dolny pasek */
+    .pjm-topbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px;
+        gap: 15px;
+        margin-bottom: 20px;
+    }
+
+    /* Ukrywamy elementy, które są teraz na dole */
+    .pjm-topbar .user-info-block,
+    .pjm-topbar .user-divider {
+        display: none;
+    }
+
+    .pjm-user-profile,
+    .user-plan-badge {
+        width: 100%;
+        justify-content: center;
+    }
+}

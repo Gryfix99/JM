@@ -1,0 +1,647 @@
+/* ==========================================================================
+   PJM DASHBOARD SUBSCRIPTION STYLES
+   Plik: assets/css/my-subscription.css
+   Opis: Style dla zakładki "Mój Abonament" w Panelu Klienta
+   ========================================================================== */
+
+/* --- KONTENER GŁÓWNY --- */
+.jm-pricing-section {
+    width: 100%;
+    max-width: 1280px;
+    margin: 0 auto;
+    color: var(--pjm-gray-text);
+    padding: 40px 20px;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.jm-pricing-section * {
+    box-sizing: border-box;
+}
+
+/* --- NAGŁÓWEK PANELU --- */
+.jm-seo-box {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+}
+
+.jm-header-area h1 {
+    font-size: 32px;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    color: var(--pjm-dark);
+    line-height: 1.2;
+}
+
+.jm-header-area p {
+    font-size: 15px;
+    color: var(--pjm-gray-text);
+    line-height: 1.6;
+}
+
+.pjm-current-status {
+    display: inline-block;
+    background: var(--pjm-success-bg);
+    color: var(--pjm-success);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    margin-top: 15px;
+    border: 1px solid var(--pjm-success);
+}
+
+/* --- PRZEŁĄCZNIK (Miesięcznie / Rocznie) --- */
+.jm-controls-row {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+.jm-billing-mode {
+    background: var(--pjm-white);
+    padding: 10px 25px;
+    border-radius: 50px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid var(--pjm-border);
+}
+
+.jm-billing-txt {
+    font-weight: 700;
+    color: var(--pjm-gray-light);
+    /* Nieaktywny */
+    transition: var(--transition);
+    font-size: 14px;
+}
+
+.jm-billing-txt.active {
+    color: var(--pjm-dark);
+    /* Aktywny */
+}
+
+.jm-save-badge {
+    background: var(--pjm-success-bg);
+    color: var(--pjm-success);
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: var(--radius-sm);
+    margin-left: 5px;
+    font-weight: 700;
+}
+
+/* Toggle Switch */
+.jm-toggle-switch {
+    position: relative;
+    width: 50px;
+    height: 26px;
+}
+
+.jm-toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.jm-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--pjm-gray-light);
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.jm-slider:before {
+    position: absolute;
+    content: "";
+    height: 20px;
+    width: 20px;
+    left: 3px;
+    bottom: 3px;
+    background-color: var(--pjm-white);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked+.jm-slider {
+    background-color: var(--pjm-orange);
+}
+
+input:checked+.jm-slider:before {
+    transform: translateX(24px);
+}
+
+/* --- LEGENDA (Unit Box) --- */
+.jm-unit-legend {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.jm-unit-box {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: var(--pjm-white);
+    padding: 15px 30px;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--pjm-border);
+    box-shadow: var(--shadow-sm);
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.jm-unit-box strong {
+    color: var(--pjm-orange);
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.jm-unit-box span {
+    font-size: 13px;
+    color: var(--pjm-gray-text);
+}
+
+/* --- GRID SYSTEM --- */
+.jm-grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    align-items: stretch;
+    margin-top: 40px;
+}
+
+/* --- KARTA PAKIETU --- */
+.jm-p-card {
+    background: var(--pjm-white);
+    border: 1px solid var(--pjm-border);
+    border-radius: var(--radius-lg);
+    padding: 30px 20px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    transition: var(--transition);
+}
+
+.jm-p-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--pjm-orange);
+    z-index: 2;
+}
+
+/* Wyróżnienia */
+.jm-p-card.featured {
+    border: 2px solid var(--pjm-orange);
+    background: var(--pjm-warning-bg);
+}
+
+.jm-p-card.active-plan,
+.jm-p-card.active-sub {
+    border: 2px solid var(--pjm-success);
+    background: var(--pjm-success-bg);
+}
+
+/* Badge */
+.jm-badge-top,
+.jm-badge-aio {
+    position: absolute;
+    top: -12px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--pjm-orange);
+    color: var(--pjm-white);
+    font-size: 10px;
+    font-weight: 800;
+    padding: 5px 12px;
+    border-radius: 20px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* Header Karty */
+.jm-p-head {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.jm-p-head h3 {
+    margin: 0;
+    font-size: 20px;
+    color: var(--pjm-dark);
+    font-weight: 800;
+}
+
+.jm-p-head span.subtitle {
+    font-size: 13px;
+    color: var(--pjm-gray-light);
+    display: block;
+    margin-top: 5px;
+}
+
+/* Cena */
+.jm-p-price-box {
+    text-align: center;
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--pjm-border);
+}
+
+.jm-price-num {
+    display: block;
+    font-size: 32px;
+    font-weight: 800;
+    color: var(--pjm-dark);
+    line-height: 1.1;
+    margin-bottom: 5px;
+}
+
+.jm-price-lbl {
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--pjm-gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.yearly-saving {
+    display: inline-block;
+    background: var(--pjm-success-bg);
+    color: var(--pjm-success);
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: var(--radius-sm);
+    margin-top: 5px;
+}
+
+/* Lista Cech */
+.jm-feature-stack {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.jm-feature-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 0;
+}
+
+.jm-feature-row.highlight {
+    background: var(--pjm-warning-bg);
+    border: 1px solid var(--pjm-border);
+    padding: 8px;
+    border-radius: var(--radius-md);
+}
+
+.jm-feature-row .material-symbols-rounded {
+    font-size: 22px;
+    color: var(--pjm-orange);
+    flex-shrink: 0;
+}
+
+.jm-feature-row.muted {
+    opacity: 0.5;
+}
+
+.jm-feature-row.muted .material-symbols-rounded {
+    color: var(--pjm-gray-light);
+}
+
+.jm-f-info {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.3;
+}
+
+.jm-f-val {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--pjm-gray-text);
+}
+
+.jm-f-lbl {
+    font-size: 10px;
+    color: var(--pjm-gray-light);
+    text-transform: uppercase;
+}
+
+/* Przyciski */
+.jm-btn-wrapper {
+    margin-top: auto;
+}
+
+.jm-order-btn {
+    display: block;
+    width: 100%;
+    padding: 14px;
+    background: var(--pjm-dark);
+    color: var(--pjm-white);
+    text-align: center;
+    font-weight: 700;
+    border-radius: var(--radius-md);
+    text-decoration: none !important;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.jm-order-btn:hover {
+    background: var(--pjm-orange);
+    color: var(--pjm-white);
+    transform: translateY(-2px);
+}
+
+.jm-order-btn.outline {
+    background: transparent;
+    border: 1px solid var(--pjm-gray-light);
+    color: var(--pjm-gray-text);
+}
+
+.jm-order-btn.outline:hover {
+    border-color: var(--pjm-dark);
+    color: var(--pjm-dark);
+}
+
+.jm-order-btn.current {
+    background: var(--pjm-success);
+    cursor: default;
+    opacity: 0.8;
+}
+
+/* --- PREMIUM CARD (Pozioma na dole) --- */
+.jm-p-card.premium-card {
+    grid-column: 1 / -1;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+    padding: 30px 40px;
+    margin-top: 10px;
+    background: var(--pjm-dark);
+    color: var(--pjm-white);
+    border: none;
+}
+
+/* Wymuszenie kolorów w Premium - FIX CIEMNEGO TEKSTU */
+.jm-p-card.premium-card h3,
+.jm-p-card.premium-card .jm-price-num,
+.jm-p-card.premium-card .jm-f-val,
+.jm-p-card.premium-card strong {
+    color: var(--pjm-white) !important;
+}
+
+.jm-p-card.premium-card .subtitle,
+.jm-p-card.premium-card .jm-price-lbl,
+.jm-p-card.premium-card .jm-f-lbl {
+    color: var(--pjm-gray-light) !important;
+}
+
+.premium-card .jm-p-price-box {
+    border-bottom: none;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+
+.premium-card .jm-feature-stack {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin: 0;
+    justify-content: center;
+}
+
+.premium-card .jm-order-btn {
+    width: auto;
+    padding: 12px 40px;
+    background: var(--pjm-orange);
+    color: var(--pjm-white);
+}
+
+.premium-card .jm-order-btn:hover {
+    background: var(--pjm-white);
+    color: var(--pjm-orange);
+}
+
+/* --- STOPKA / REGULAMIN --- */
+.jm-footer-area {
+    margin-top: 60px;
+    border-top: 1px solid var(--pjm-border);
+    padding-top: 40px;
+    background: var(--pjm-white);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+    padding: 40px;
+}
+
+.jm-rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+    text-align: left;
+}
+
+.jm-rule-item h6 {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--pjm-dark);
+    margin-bottom: 10px;
+}
+
+.jm-rule-icon {
+    font-size: 20px;
+    color: var(--pjm-orange);
+    background: var(--pjm-warning-bg);
+    padding: 6px;
+    border-radius: var(--radius-sm);
+}
+
+.jm-rule-item p {
+    font-size: 13px;
+    color: var(--pjm-gray-text);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.jm-disclaimer {
+    text-align: center;
+    font-size: 12px;
+    color: var(--pjm-gray-light);
+    border-top: 1px dashed var(--pjm-border);
+    padding-top: 20px;
+}
+
+/* --- RESPONSYWNOŚĆ --- */
+@media (max-width: 1100px) {
+    .jm-grid-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .jm-header-area h1 {
+        font-size: 28px;
+    }
+
+    .jm-pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /* Premium na mobilce staje się pionowe */
+    .jm-p-card.premium-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+
+    .premium-card .jm-p-price-box {
+        text-align: center;
+    }
+
+    .premium-card .jm-order-btn {
+        width: 100%;
+    }
+
+    /* Legenda pionowo */
+    .jm-unit-box {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .jm-unit-box>div {
+        border-right: none;
+        border-bottom: 1px solid var(--pjm-border);
+        padding-bottom: 10px;
+        margin-bottom: 10px;
+        padding-right: 0;
+    }
+}
+
+/* Centrum Dowodzenia - Dash Card Layout */
+.pjm-command-center {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
+    padding: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.pjm-cc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 30px;
+}
+
+.pjm-cc-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.pjm-cc-card:not(:last-child) {
+    border-right: 1px solid #f1f5f9;
+    padding-right: 15px;
+}
+
+.cc-label {
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 800;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+.cc-val-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 8px 0;
+}
+
+.cc-main-val {
+    font-size: 32px;
+    color: #1e293b;
+    font-weight: 800;
+}
+
+.cc-val-static strong {
+    font-size: 18px;
+    display: block;
+    margin-top: 5px;
+    color: #1e293b;
+}
+
+.cc-val-static strong.orange {
+    color: #f97316;
+}
+
+.cc-sub-lbl {
+    font-size: 12px;
+    color: #94a3b8;
+}
+
+.cc-sub-info {
+    font-size: 11px;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+}
+
+.cc-sub-info.success {
+    color: #10b981;
+}
+
+.cc-sub-info .material-symbols-rounded {
+    font-size: 14px;
+}
+
+/* Status Tag */
+.pjm-status-tag {
+    font-size: 12px;
+    font-weight: 700;
+    padding: 8px 12px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.pjm-status-tag.warning {
+    background: #fffbeb;
+    color: #b45309;
+    border: 1px solid #fde68a;
+}
+
+.actions {
+    align-items: flex-end;
+}
+
+@media (max-width: 768px) {
+    .pjm-cc-card {
+        border-right: none !important;
+        border-bottom: 1px solid #f1f5f9;
+        padding: 15px 0;
+    }
+
+    .actions {
+        align-items: center;
+    }
+}

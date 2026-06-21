@@ -1,0 +1,174 @@
+/* =========================================
+   MY ACCOUNT SPECIFIC
+   ========================================= */
+
+.pjm-account-container {
+    max-width: 1000px;
+    animation: fadeIn 0.4s ease-out;
+}
+
+.pjm-grid-2-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    align-items: start;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--pjm-dark);
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.card-title .material-symbols-rounded {
+    color: var(--pjm-orange);
+}
+
+.divider {
+    height: 1px;
+    background: var(--pjm-border);
+    margin: 25px 0;
+}
+
+/* SELEKTOR TYPU KONTA */
+.account-type-selector {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.type-option {
+    flex: 1;
+    cursor: pointer;
+    position: relative;
+}
+
+.type-option input {
+    opacity: 0;
+    position: absolute;
+    width: 0;
+}
+
+.type-option .option-box {
+    border: 1px solid var(--pjm-border);
+    border-radius: var(--radius-md);
+    padding: 12px;
+    text-align: center;
+    transition: var(--transition);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    background: #fff;
+    color: var(--pjm-gray-text);
+}
+
+.type-option input:checked+.option-box {
+    border-color: var(--pjm-orange);
+    background: #FFF3E0;
+    color: var(--pjm-orange);
+    font-weight: 600;
+}
+
+.type-option input:checked+.option-box span.material-symbols-rounded {
+    color: var(--pjm-orange);
+}
+
+/* UKŁAD ADRESU */
+.address-section-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--pjm-gray-light);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 5px;
+}
+
+.form-row-flex {
+    display: flex;
+    gap: 15px;
+}
+
+.col-street {
+    flex: 4;
+}
+
+.col-building,
+.col-flat {
+    flex: 1.5;
+    min-width: 70px;
+}
+
+.col-postcode {
+    flex: 1.5;
+    min-width: 100px;
+}
+
+.col-city {
+    flex: 4;
+}
+
+.hidden-fields {
+    display: none;
+}
+
+/* NOTYFIKACJE */
+.pjm-alert {
+    padding: 16px;
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-weight: 500;
+}
+
+.pjm-alert.success {
+    background: var(--pjm-success-bg);
+    color: var(--pjm-success);
+    border: 1px solid #c8e6c9;
+}
+
+.pjm-alert.error {
+    background: var(--pjm-error-bg);
+    color: var(--pjm-error);
+    border: 1px solid #ffcdd2;
+}
+
+.form-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+@media (max-width: 768px) {
+    .pjm-grid-2-col {
+        grid-template-columns: 1fr;
+    }
+
+    .form-row-flex {
+        flex-wrap: wrap;
+    }
+
+    .col-street,
+    .col-postcode,
+    .col-city {
+        flex: 1 1 100%;
+    }
+
+    .col-building,
+    .col-flat {
+        flex: 1 1 calc(50% - 8px);
+    }
+
+    .save-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,37 @@
+{
+  "category_name": "Dodatki do tekstu",
+  "items": [
+    {
+      "id": "subtitles",
+      "name": "Napisy",
+      "description": "Napisy do materiału filmowego",
+      "price": 20,
+      "price_mode": "per_unit", 
+      "input_type": "checkbox" 
+    },
+    {
+      "id": "lektor",
+      "name": "Lektor",
+      "description": "Profesjonalny lektor polski",
+      "price": 200,
+      "price_mode": "per_unit", 
+      "input_type": "checkbox"
+    },
+    {
+      "id": "other_format",
+      "name": "Inny format",
+      "description": "Dodatkowy format wideo (np. 9:16)",
+      "price": 200,
+      "price_mode": "flat", 
+      "input_type": "checkbox" 
+    },
+    {
+      "id": "certificate",
+      "name": "Zaświadczenie",
+      "description": "Weryfikacja przez osobę Głuchą",
+      "price": 400,
+      "price_mode": "flat", 
+      "input_type": "checkbox"
+    }
+  ]
+}

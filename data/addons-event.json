@@ -1,0 +1,29 @@
+{
+  "category_name": "Dodatki do wydarzeń",
+  "items": [
+    {
+      "id": "mobile_studio",
+      "name": "Mobilne Studio",
+      "description": "Własny Greenscreen (profesjonalne tło) oraz zestaw oświetleniowy (lampy studyjne)",
+      "price": 500,
+      "price_mode": "flat",
+      "input_type": "checkbox"
+    },
+    {
+      "id": "invitation_pjm",
+      "name": "Zaproszenie w języku migowym",
+      "description": "Tłumaczenie tekstu do 500 zzs lub 1 minuta tłumaczenia w filmie",
+          "price": 150,
+          "price_mode": "flat",
+          "input_type": "checkbox"
+    },
+    {
+      "id": "loop",
+      "name": "Pętla indukcyjna",
+      "description": "Możliwość zamówienia pętli indukcyjnej jako uzupełnienie tłumaczenia. Zapewnia lepszy odbiór dźwięku osobom korzystającym z aparatów słuchowych i implantów ślimakowych.",
+      "price": 1500,
+      "price_mode": "per_unit",
+      "input_type": "checkbox"
+    }
+  ]
+}

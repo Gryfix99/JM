@@ -1,0 +1,21 @@
+{
+  "category_name": "Ulepszenia wideo",
+  "items": [
+    {
+      "id": "subtitles",
+      "name": "Napisy",
+      "description": "Napisy do materiału filmowego",
+      "price": 10,
+      "price_mode": "per_unit", 
+      "input_type": "checkbox"
+    },
+    {
+      "id": "certificate",
+      "name": "Zaświadczenie",
+      "description": "Weryfikacja przez osobę Głuchą",
+      "price": 400,
+      "price_mode": "flat",
+      "input_type": "checkbox"
+    }
+  ]
+}

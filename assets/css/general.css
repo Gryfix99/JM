@@ -1,0 +1,101 @@
+/* =========================================
+   PJM GENERAL / CORE STYLES
+   ========================================= */
+
+/* 1. IMPORTY FONTÓW I BAZY */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
+
+/* Importy bazowe (przyciski, formularze, CTA - używane wszędzie) */
+@import 'buttons.css';
+@import 'forms.css';
+
+/* A11y: szanuj preferencję ograniczenia ruchu (WCAG 2.3.3) */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.001ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.001ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* =========================================
+   2. ZMIENNE GLOBALNE (Theme Variables)
+   ========================================= */
+:root {
+    /* Layout */
+    --sidebar-width: 260px;
+    --header-height: 80px;
+
+    /* ===== KIERUNEK B — "NATURALNY" (zieleń + złoto), WCAG AA ===== */
+    --pjm-primary: #1B5E4B;        /* zieleń marki — biały tekst = 7.6:1 */
+    --pjm-primary-dark: #154A3B;   /* hover/ciemniejsza zieleń */
+    --pjm-primary-soft: #E8F1EC;   /* jasne tło zielone (sekcje, badge) */
+    --pjm-accent: #E0A33E;         /* złoto — TYLKO z ciemnym tekstem */
+    --pjm-accent-text: #3A2A00;    /* ciemny brąz na złocie = 6.2:1 */
+    --pjm-accent-soft: #FBF1DC;    /* jasne tło złote */
+    --pjm-terracotta: #A8472B;     /* terakota — biały tekst = 5.9:1 */
+    --pjm-cream: #FAF6EE;          /* tło "len" */
+    --pjm-ink: #16241D;            /* nagłówki / atrament */
+
+    /* Aliasy legacy — przekierowane na nową paletę (re-tematyzacja całości) */
+    --pjm-orange: var(--pjm-primary);
+    --pjm-orange-hover: var(--pjm-primary-dark);
+    --pjm-dark: var(--pjm-ink);
+
+    /* Główny tekst/nagłówki */
+    --pjm-gray-text: #44504A;
+    /* Tekst poboczny */
+    --pjm-gray-light: #8A938D;
+    /* Ikony, drobne opisy */
+    --pjm-border: #E3E1D9;
+    /* Ramki */
+    --pjm-bg-light: var(--pjm-cream);
+    /* Tło panelu */
+    --pjm-white: #FFFFFF;
+
+    /* Statusy */
+    --pjm-success: #27ae60;
+    --pjm-success-bg: #eafaf1;
+    --pjm-error: #e74c3c;
+    --pjm-error-bg: #fdedec;
+    --pjm-warning: #f1c40f;
+    --pjm-info: #3498db;
+
+    /* Efekty */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --shadow-sm: 0 2px 5px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.2s ease-in-out;
+}
+
+/* =========================================
+   3. TYPOGRAFIA I UTILITIES (Base)
+   ========================================= */
+body {
+    font-family: 'Inter', system-ui, sans-serif;
+    color: var(--pjm-gray-text);
+    margin: 0;
+    padding: 0;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    color: var(--pjm-dark);
+    font-weight: 700;
+    letter-spacing: -0.01em;
+}
+
+a {
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+p {
+    margin-bottom: 1.25em;
+    font-size: 15px;
+    line-height: 1.6;
+}

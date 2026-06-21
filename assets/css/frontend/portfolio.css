@@ -1,0 +1,87 @@
+.pjm-portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+}
+
+.pjm-realizacja-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.pjm-realizacja-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.pjm-card-image {
+    height: 220px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.pjm-badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    background: var(--pjm-orange, #f97316);
+    color: #fff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.pjm-card-body {
+    padding: 25px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.pjm-industry {
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.pjm-card-body h4 {
+    margin: 10px 0;
+    color: #1e293b;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.pjm-card-footer {
+    margin-top: auto;
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f1f5f9;
+}
+
+.pjm-icons {
+    display: flex;
+    gap: 10px;
+    color: var(--pjm-orange);
+}
+
+.pjm-link-btn {
+    text-decoration: none;
+    color: #1e293b;
+    font-weight: 800;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}

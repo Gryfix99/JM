@@ -1,0 +1,429 @@
+/* =========================================
+   PJM BUTTON STYLES (Global)
+   ========================================= */
+
+/* --- 1. RESET I BAZA --- */
+button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-family: inherit;
+    background: none;
+}
+
+.btn,
+.jm-order-btn,
+.save-btn,
+.jm-btn-checkout,
+.jm-btn-add-cart {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 24px;
+    border-radius: var(--radius-md);
+    /* Lub 50px zależnie od preferencji */
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: var(--transition);
+    border: 1px solid transparent;
+    cursor: pointer;
+    gap: 8px;
+    line-height: 1.2;
+}
+
+/* Stan zablokowany (wspólny) */
+.btn:disabled,
+.btn.disabled,
+button:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+    filter: grayscale(1);
+}
+
+/* --- 2. WARIANTY KOLORYSTYCZNE (PODSTAWOWE) --- */
+
+/* Primary: Pomarańczowe tło (Główna akcja) */
+.btn-primary,
+.jm-order-btn,
+.jm-btn-add-cart {
+    background-color: var(--pjm-orange);
+    color: var(--pjm-white) !important;
+    border-radius: 50px;
+    /* Zaokrąglone */
+}
+
+.btn-primary:hover,
+.jm-order-btn:hover,
+.jm-btn-add-cart:hover {
+    background-color: var(--pjm-orange-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(27, 94, 75, 0.3);
+    color: var(--pjm-white) !important;
+}
+
+/* Outline: Ramka (Akcja drugorzędna) */
+.btn-outline,
+.jm-btn-cta.outline {
+    background-color: transparent;
+    border-color: var(--pjm-border);
+    color: var(--pjm-gray-text) !important;
+    border-radius: 50px;
+}
+
+.btn-outline:hover,
+.jm-btn-cta.outline:hover {
+    background-color: var(--pjm-white);
+    border-color: var(--pjm-dark);
+    color: var(--pjm-dark) !important;
+}
+
+/* Success: Zielone tło (Zatwierdzanie / Checkout) */
+.btn-success,
+.jm-btn-checkout {
+    background-color: var(--pjm-success);
+    color: var(--pjm-white) !important;
+    border-radius: var(--radius-md);
+    /* Mniej zaokrąglone w formularzach */
+}
+
+.btn-success:hover,
+.jm-btn-checkout:hover {
+    background-color: var(--pjm-accent-green);
+    /* Ciemniejszy zielony */
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+    transform: translateY(-2px);
+}
+
+/* Small Button */
+.btn-sm {
+    padding: 6px 14px;
+    font-size: 12px;
+}
+
+/* Back Button (np. w Checkout) */
+.btn-back {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: var(--pjm-gray-light);
+    font-size: 13px;
+    font-weight: 600;
+    transition: var(--transition);
+    background: transparent;
+    padding: 0;
+}
+
+.btn-back:hover {
+    color: var(--pjm-orange);
+}
+
+/* --- 3. SPECJALNE PRZYCISKI SYSTEMOWE --- */
+
+/* Submit w logowaniu/rejestracji */
+.pjm-btn-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--pjm-orange);
+    color: var(--pjm-white);
+    border: none;
+    border-radius: var(--radius-md);
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: var(--transition);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.pjm-btn-submit:hover {
+    background: var(--pjm-orange-hover);
+    box-shadow: 0 4px 12px rgba(27, 94, 75, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Przycisk "Doładuj" (Plusik w headerze) */
+.btn-mini-topup {
+    background: var(--pjm-accent-green);
+    color: var(--pjm-white) !important;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none !important;
+    transition: var(--transition);
+}
+
+.btn-mini-topup:hover {
+    transform: scale(1.1);
+    background: #1e8449;
+}
+
+/* Okrągłe przyciski akcji (Icon Buttons - np. w tabelach) */
+.btn-icon,
+.pjm-btn-circle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: var(--pjm-white);
+    border: 1px solid var(--pjm-border);
+    color: var(--pjm-gray-text);
+    text-decoration: none;
+    transition: var(--transition);
+    cursor: pointer;
+}
+
+.btn-icon:hover,
+.pjm-btn-circle:hover {
+    background: var(--pjm-orange);
+    color: var(--pjm-white);
+    border-color: var(--pjm-orange);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(27, 94, 75, 0.3);
+}
+
+.btn-icon span,
+.pjm-btn-circle span {
+    font-size: 18px;
+}
+
+/* Link tekstowy do usuwania (np. w koszyku) */
+.item-remove-text,
+.jm-btn-remove-day {
+    background: none;
+    border: none;
+    color: var(--pjm-error);
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 5px 0;
+    text-decoration: underline;
+    opacity: 0.7;
+    transition: var(--transition);
+}
+
+.item-remove-text:hover,
+.jm-btn-remove-day:hover {
+    opacity: 1;
+}
+
+/* Przycisk Edycji tekstu (w checkout) */
+.btn-text-edit {
+    background: none;
+    border: none;
+    color: var(--pjm-info);
+    font-weight: 600;
+    font-size: 13px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: var(--transition);
+}
+
+.btn-text-edit:hover {
+    text-decoration: underline;
+    color: #2980b9;
+}
+
+/* --- 4. WIZARD / CALCULATOR SPECIFIC --- */
+
+/* Duże kafelki wyboru (Wgraj plik / Wklej tekst) */
+.jm-btn-action {
+    flex: 1;
+    min-height: 140px;
+    border: 2px dashed var(--pjm-border);
+    background: var(--pjm-white);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    font-weight: 700;
+    color: var(--pjm-gray-text);
+}
+
+.jm-btn-action:hover {
+    border-color: var(--pjm-orange);
+    color: var(--pjm-orange);
+    background: #FFFDF9;
+    /* Bardzo jasny pomarańcz */
+    transform: scale(1.02);
+}
+
+.jm-btn-action span.material-symbols-rounded,
+.jm-btn-action span.material-symbols-outlined {
+    font-size: 32px;
+    margin-bottom: 10px;
+}
+
+/* Nawigacja Wizard (Dalej / Wstecz) */
+.jm-btn-next {
+    background: var(--pjm-orange);
+    color: var(--pjm-white);
+    border: none;
+    padding: 16px 45px;
+    border-radius: 50px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    font-size: 16px;
+}
+
+.jm-btn-next:hover {
+    background: var(--pjm-orange-hover);
+    box-shadow: 0 5px 15px rgba(27, 94, 75, 0.3);
+    transform: translateX(5px);
+}
+
+.jm-btn-prev {
+    background: transparent;
+    border: 1px solid var(--pjm-border);
+    padding: 16px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--pjm-gray-text);
+    transition: var(--transition);
+}
+
+.jm-btn-prev:hover {
+    background: var(--pjm-bg-light);
+    border-color: #ccc;
+    color: var(--pjm-dark);
+}
+
+/* Przyciski w podsumowaniu (Zamawiam / PDF) */
+.jm-actions-stack {
+    display: flex;
+    gap: 15px;
+    margin: 30px 0;
+    justify-content: flex-end;
+}
+
+.jm-btn-order {
+    background: var(--pjm-success);
+    color: var(--pjm-white);
+    border: none;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 800;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(39, 174, 96, 0.3);
+}
+
+.jm-btn-order:hover {
+    background: var(--pjm-accent-green);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(39, 174, 96, 0.4);
+}
+
+.jm-btn-offer {
+    background: var(--pjm-white);
+    color: var(--pjm-dark);
+    border: 2px solid var(--pjm-dark);
+    padding: 18px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: var(--transition);
+}
+
+.jm-btn-offer:hover {
+    background: var(--pjm-dark);
+    color: var(--pjm-white);
+}
+
+/* Przycisk ikony (np. w kalkulatorze do usuwania plików) */
+.pjm-btn-icon {
+    background: #f0f0f0;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 0 20px;
+    cursor: pointer;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    transition: 0.2s;
+    height: 48px;
+    /* Dopasowane do inputów */
+    white-space: nowrap;
+}
+
+.pjm-btn-icon:hover {
+    background: #e0e0e0;
+    color: #333;
+}
+
+/* --- 5. DOSTĘPNOŚĆ (WCAG 2.1 AA) --- */
+/* Zieleń marki #1B5E4B + BIAŁY tekst = 7.6:1 (AAA). Akcje główne mają biały tekst. */
+.btn-primary,
+.jm-order-btn,
+.jm-btn-add-cart,
+.pjm-btn-submit,
+.jm-btn-next,
+.btn-primary:hover,
+.jm-order-btn:hover,
+.jm-btn-add-cart:hover,
+.pjm-btn-submit:hover,
+.jm-btn-next:hover {
+    color: #ffffff !important;
+}
+
+/* Wariant złoty (akcent) — TYLKO z ciemnym tekstem (#3A2A00 na złocie = 6.2:1). */
+.btn-accent,
+.jm-btn-accent {
+    background-color: var(--pjm-accent);
+    color: var(--pjm-accent-text) !important;
+    border-radius: 50px;
+    border: 1px solid transparent;
+    padding: 12px 24px;
+    font-weight: 700;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+.btn-accent:hover,
+.jm-btn-accent:hover {
+    background-color: #C98A2A;
+    color: var(--pjm-accent-text) !important;
+    transform: translateY(-2px);
+}
+
+/* Widoczny focus dla nawigacji klawiaturą (reset w sekcji 1 usuwał outline). */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+.btn:focus-visible,
+[tabindex]:focus-visible {
+    outline: 3px solid var(--pjm-accent) !important;
+    outline-offset: 2px !important;
+    border-radius: 4px;
+}

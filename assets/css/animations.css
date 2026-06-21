@@ -1,0 +1,85 @@
+@keyframes jmFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes jmSpin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.jm-step-content.active {
+    animation: jmFadeUp 0.4s ease forwards;
+}
+
+.spin {
+    animation: jmSpin 1s linear infinite;
+}
+
+/* Pasek postępu uploadu */
+.jm-progress-container {
+    margin-top: 20px;
+    display: none;
+    /* Domyślnie ukryty, JS go pokaże */
+}
+
+.jm-progress-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--pjm-dark);
+}
+
+.jm-progress-track {
+    background: #EEE;
+    height: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.jm-progress-fill {
+    height: 100%;
+    background: var(--pjm-orange);
+    width: 0%;
+    transition: width 0.3s ease;
+}
+
+/* Loader z kręcącą się ikoną */
+.jm-loader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-weight: 600;
+    color: var(--pjm-orange);
+    margin-top: 20px;
+}
+
+.jm-loader .spin {
+    font-size: 24px;
+    animation: pjm-spin 1s linear infinite;
+}
+
+@keyframes pjm-spin {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}

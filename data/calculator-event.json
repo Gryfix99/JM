@@ -1,0 +1,207 @@
+{
+    "calculator_info": {
+        "id": "event_interpreting",
+        "name": "Tłumaczenia wydarzeń"
+    },
+    "pricing_rules": {
+        "translators_threshold": 1,
+        "translators_multiplier": 2
+    },
+    "packages": [
+        {
+            "id": "tier_1h",
+            "name": "1 godzina",
+            "subtitle": "Spotkania, konsultacje",
+            "badge": null,
+            "is_featured": false,
+            "unit_range": [
+                1,
+                1
+            ],
+            "unit_label": "Całość (1 tłumacz)",
+            "features": [
+                {
+                    "icon": "verified",
+                    "text": "Gwarancja jakości",
+                    "subtext": "Certyfikowany tłumacz PJM"
+                },
+                {
+                    "icon": "location_on",
+                    "text": "Warszawa i okolice",
+                    "subtext": "Tłumaczenie na miejscu"
+                }
+            ],
+            "config": {
+                "rate_per_translator": 200,
+                "online_discount": 10,
+                "free_addons": []
+            }
+        },
+        {
+            "id": "tier_2h",
+            "name": "2-3 godziny",
+            "subtitle": "Warsztaty, urzędy",
+            "badge": null,
+            "is_featured": true,
+            "unit_range": [
+                2,
+                3
+            ],
+            "unit_label": "Całość (2 tłumaczy)",
+            "features": [
+                {
+                    "icon": "trending_down",
+                    "text": "Kolejna godzina taniej",
+                    "subtext": "2 i 3 godzina – 190 zł/tłumacza"
+                },
+                {
+                    "icon": "verified",
+                    "text": "Certyfikowani tłumacze",
+                    "subtext": "Gwarancja jakości"
+                },
+                {
+                    "icon": "groups",
+                    "text": "2 tłumaczy",
+                    "subtext": "Zgodne z kodeksem etycznym"
+                },
+                {
+                    "icon": "location_on",
+                    "text": "Warszawa i okolice",
+                    "subtext": "Tłumaczenie na miejscu"
+                }
+            ],
+            "config": {
+                "rate_per_translator": 190,
+                "online_discount": 10,
+                "free_addons": []
+            }
+        },
+        {
+            "id": "tier_3",
+            "name": "4-5 godzin",
+            "subtitle": "Konferencje, szkolenia",
+            "badge": null,
+            "is_featured": false,
+            "unit_range": [
+                4,
+                5
+            ],
+            "unit_label": "Całość (2 tłumaczy)",
+            "features": [
+                {
+                    "icon": "trending_down",
+                    "text": "Kolejna godzina taniej",
+                    "subtext": "4 i 5 godzina – 180 zł/tłumacza"
+                },
+                {
+                    "icon": "verified",
+                    "text": "Certyfikowani tłumacze",
+                    "subtext": "Gwarancja jakości"
+                },
+                {
+                    "icon": "groups",
+                    "text": "2 tłumaczy",
+                    "subtext": "Zgodne z kodeksem etycznym"
+                },
+                {
+                    "icon": "location_on",
+                    "text": "Warszawa i okolice",
+                    "subtext": "Tłumaczenie na miejscu"
+                }
+            ],
+            "config": {
+                "rate_per_translator": 180,
+                "online_discount": 0,
+                "free_addons": []
+            }
+        },
+        {
+            "id": "tier_4",
+            "name": "6-7 godzin",
+            "subtitle": "Długie wydarzenia",
+            "badge": null,
+            "is_featured": false,
+            "unit_range": [
+                6,
+                7
+            ],
+            "unit_label": "Całość (2 tłumaczy)",
+            "features": [
+                {
+                    "icon": "trending_down",
+                    "text": "Kolejna godzina taniej",
+                    "subtext": "6 i więcej – 170 zł/tłumacza"
+                },
+                {
+                    "icon": "verified",
+                    "text": "Certyfikowani tłumacze",
+                    "subtext": "Gwarancja jakości"
+                },
+                {
+                    "icon": "groups",
+                    "text": "2 tłumaczy",
+                    "subtext": "Zgodne z kodeksem etycznym"
+                },
+                {
+                    "icon": "location_on",
+                    "text": "Warszawa i okolice",
+                    "subtext": "Tłumaczenie na miejscu"
+                },
+                {
+                    "icon": "videocam",
+                    "text": "Zaproszenie w PJM",
+                    "subtext": "Darmowe nagranie"
+                }
+            ],
+            "config": {
+                "rate_per_translator": 170,
+                "online_discount": 0,
+                "free_addons": [
+                    "invitation_pjm"
+                ]
+            }
+        },
+        {
+            "id": "tier_conf",
+            "name": "Konferencja kilkudniowa",
+            "subtitle": "Wydarzenia wielodniowe",
+            "badge": "Wycena indywidualna",
+            "is_featured": false,
+            "unit_range": [
+                8,
+                999
+            ],
+            "unit_label": "Całość (2 tłumaczy)",
+            "features": [
+                {
+                    "icon": "trending_down",
+                    "text": "Najniższa stawka godzinowa",
+                    "subtext": "170 zł/tłumacza"
+                },
+                {
+                    "icon": "event_repeat",
+                    "text": "Wiele dni",
+                    "subtext": "Pełna obsługa konferencji"
+                },
+                {
+                    "icon": "groups",
+                    "text": "Zespół tłumaczy",
+                    "subtext": "Zmiany co 20–30 min"
+                },
+                {
+                    "icon": "verified",
+                    "text": "Certyfikowani tłumacze",
+                    "subtext": "Gwarancja jakości"
+                }
+            ],
+            "config": {
+                "rate_per_translator": 170,
+                "online_discount": 0,
+                "free_addons": [
+                    "invitation_pjm"
+                ]
+            },
+            "price_display": "from"
+        }
+    ]
+}

@@ -1,0 +1,161 @@
+{
+  "calculator_info": {
+    "id": "video_production",
+    "name": "Produkcja wideo"
+  },
+  "pricing_rules": {
+    "unit_name": "minuta"
+  },
+  "packages": [
+    {
+      "id": "tier_1",
+      "name": "KADR",
+      "subtitle": "Nagranie do 5 minut",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [1, 5],
+      "unit_label": "ryczałt",
+      "features": [
+        {
+          "icon": "visibility",
+          "text": "Jakość HD/4K",
+          "subtext": "Wysoka jakość nagrania"
+        },
+        {
+          "icon": "layers",
+          "text": "Greenscreen",
+          "subtext": "Tło do kluczowania"
+        },
+        {
+          "icon": "timer",
+          "text": "2–3 dni",
+          "subtext": "Szybka realizacja"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 400,
+        "rate_per_unit": 0,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_2",
+      "name": "SCENA",
+      "subtitle": "Nagranie 5–15 minut",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [6, 15],
+      "unit_label": "kolejne minuty",
+      "features": [
+        {
+          "icon": "visibility",
+          "text": "Jakość HD/4K",
+          "subtext": "Wysoka jakość nagrania"
+        },
+        {
+          "icon": "layers",
+          "text": "Greenscreen",
+          "subtext": "Tło do kluczowania"
+        },
+        {
+          "icon": "timer",
+          "text": "2–3 dni",
+          "subtext": "Czas realizacji"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 400,
+        "rate_per_unit": 40,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_3",
+      "name": "SEKWENCJA",
+      "subtitle": "Nagranie 15–30 minut",
+      "badge": "NAJLEPSZY WYBÓR",
+      "is_featured": true,
+      "unit_range": [16, 30],
+      "unit_label": "optymalna cena",
+      "features": [
+        {
+          "icon": "visibility",
+          "text": "Jakość HD/4K",
+          "subtext": "Wysoka jakość nagrania"
+        },
+        {
+          "icon": "layers",
+          "text": "Greenscreen",
+          "subtext": "Tło do kluczowania"
+        },
+        {
+          "icon": "timer",
+          "text": "3–4 dni",
+          "subtext": "Czas realizacji"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 800,
+        "rate_per_unit": 30,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_4",
+      "name": "PEŁNY METRAŻ",
+      "subtitle": "Nagranie 30–60 minut",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [31, 60],
+      "unit_label": "najniższa stawka",
+      "features": [
+        {
+          "icon": "visibility",
+          "text": "Jakość HD/4K",
+          "subtext": "Wysoka jakość nagrania"
+        },
+        {
+          "icon": "layers",
+          "text": "Greenscreen",
+          "subtext": "Tło do kluczowania"
+        },
+        {
+          "icon": "timer",
+          "text": "3–4 dni",
+          "subtext": "Czas realizacji"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 1250,
+        "rate_per_unit": 25,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_5",
+      "name": "NADGODZINY",
+      "subtitle": "Powyżej 60 minut",
+      "badge": "WYCENA AUTOMATYCZNA",
+      "is_featured": false,
+      "unit_range": [61, 999],
+      "unit_label": "minuty ponad limit",
+      "features": [
+        {
+          "icon": "trending_down",
+          "text": "Najniższa stawka",
+          "subtext": "Dla bardzo długich nagrań"
+        },
+        {
+          "icon": "timer",
+          "text": "Indywidualny termin",
+          "subtext": "Zależny od długości materiału"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 2000,
+        "rate_per_unit": 20,
+        "free_addons": []
+      }
+    }
+  ]
+}

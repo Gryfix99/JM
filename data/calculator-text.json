@@ -1,0 +1,162 @@
+{
+  "calculator_info": {
+    "id": "text_translation",
+    "name": "Tłumaczenie Tekstu na PJM"
+  },
+  "pricing_rules": {
+    "unit_name": "strona",
+    "divisor": 1800
+  },
+  "packages": [
+    {
+      "id": "tier_1",
+      "name": "1 STRONA",
+      "subtitle": "Do 1800 ZZS",
+      "badge": "START",
+      "is_featured": false,
+      "unit_range": [1, 1],
+      "unit_label": "ryczałt",
+      "features": [
+        {
+          "icon": "verified",
+          "text": "Gwarancja jakości",
+          "subtext": "Certyfikowany tłumacz PJM"
+        },
+        {
+          "icon": "movie_edit",
+          "text": "Montaż i branding",
+          "subtext": "Gotowy materiał wideo PJM"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 400,
+        "rate_per_unit": 0,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_2",
+      "name": "2–3 STRONY",
+      "subtitle": "1801 – 5400 ZZS",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [2, 3],
+      "unit_label": "kolejne strony",
+      "features": [
+        {
+          "icon": "verified",
+          "text": "Gwarancja jakości",
+          "subtext": "Certyfikowany tłumacz PJM"
+        },
+        {
+          "icon": "trending_down",
+          "text": "Niższa stawka",
+          "subtext": "350 zł za stronę"
+        },
+        {
+          "icon": "movie_edit",
+          "text": "Montaż i branding",
+          "subtext": "Gotowy materiał wideo PJM"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 400,
+        "rate_per_unit": 350,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_3",
+      "name": "4–5 STRON",
+      "subtitle": "5401 – 9000 ZZS",
+      "badge": "NAJLEPSZY WYBÓR",
+      "is_featured": true,
+      "unit_range": [4, 5],
+      "unit_label": "optymalna cena",
+      "features": [
+        {
+          "icon": "verified",
+          "text": "Gwarancja jakości",
+          "subtext": "Certyfikowany tłumacz PJM"
+        },
+        {
+          "icon": "trending_down",
+          "text": "Jeszcze taniej",
+          "subtext": "300 zł za stronę"
+        },
+        {
+          "icon": "movie_edit",
+          "text": "Montaż i branding",
+          "subtext": "Gotowy materiał wideo PJM"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 1100,
+        "rate_per_unit": 300,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_4",
+      "name": "6–7 STRON",
+      "subtitle": "9001 – 12600 ZZS",
+      "badge": null,
+      "is_featured": false,
+      "unit_range": [6, 7],
+      "unit_label": "korzystna stawka",
+      "features": [
+        {
+          "icon": "verified",
+          "text": "Gwarancja jakości",
+          "subtext": "Certyfikowany tłumacz PJM"
+        },
+        {
+          "icon": "trending_down",
+          "text": "Stała niższa cena",
+          "subtext": "250 zł za stronę"
+        },
+        {
+          "icon": "movie_edit",
+          "text": "Montaż i branding",
+          "subtext": "Gotowy materiał wideo PJM"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 1700,
+        "rate_per_unit": 250,
+        "free_addons": []
+      }
+    },
+    {
+      "id": "tier_5",
+      "name": "8 STRON I WIĘCEJ",
+      "subtitle": "Powyżej 12600 ZZS",
+      "badge": "DLA INSTYTUCJI",
+      "is_featured": false,
+      "unit_range": [8, 999],
+      "unit_label": "najniższa stawka",
+      "features": [
+        {
+          "icon": "verified",
+          "text": "Gwarancja jakości",
+          "subtext": "Certyfikowany tłumacz PJM"
+        },
+        {
+          "icon": "trending_down",
+          "text": "Najniższa stawka",
+          "subtext": "200 zł za stronę"
+        },
+        {
+          "icon": "movie_edit",
+          "text": "Montaż i branding",
+          "subtext": "Gotowy materiał wideo PJM"
+        }
+      ],
+      "config": {
+        "tier_base_cost": 2200,
+        "rate_per_unit": 200,
+        "free_addons": []
+      }
+    }
+  ]
+}

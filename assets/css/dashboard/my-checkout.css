@@ -1,0 +1,89 @@
+.jm-checkout-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.jm-checkout-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.payment-option {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    border: 2px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 10px;
+}
+
+.payment-option.selected {
+    border-color: var(--pjm-orange);
+    background: #fffdf5;
+}
+
+.pay-icon {
+    width: 40px;
+    height: 40px;
+    background: #f5f5f5;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 15px;
+}
+
+.pay-info strong {
+    font-size: 14px;
+    color: #333;
+}
+
+.payment-option input[type="radio"] {
+    margin-right: 15px;
+    accent-color: var(--pjm-orange);
+}
+
+.detail-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.detail-row.discount {
+    color: #27ae60;
+    font-weight: 600;
+}
+
+.detail-row.wallet {
+    color: #3498db;
+    font-weight: 600;
+}
+
+@media (max-width: 900px) {
+    .jm-checkout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .jm-col-summary .sticky {
+        position: static;
+    }
+}
+
+.spin {
+    animation: fa-spin 2s infinite linear;
+}
+
+@keyframes fa-spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(359deg);
+    }
+}

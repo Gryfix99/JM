@@ -1,0 +1,560 @@
+/* =========================================
+   PJM FORM STYLES (Global Inputs & Controls)
+   ========================================= */
+
+/* --- 1. GRID SYSTEM & LAYOUT --- */
+.jm-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.full {
+    grid-column: span 2;
+}
+
+/* Responsywność Grida */
+@media (max-width: 768px) {
+    .jm-form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: span 1;
+    }
+}
+
+@media (max-width: 600px) {
+    .full-width-mobile {
+        grid-column: span 1;
+    }
+}
+
+/* --- 2. INPUT GROUPS (Floating Labels) --- */
+.jm-input-group {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+/* Style bazowe dla pól */
+.jm-input-group input,
+.jm-input-group textarea,
+.jm-input-group select {
+    width: 100%;
+    padding: 16px 15px;
+    /* Optymalne dla floating labels */
+    border: 2px solid var(--pjm-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+    /* Czytelniejszy font */
+    outline: none;
+    transition: var(--transition);
+    background: var(--pjm-white);
+    color: var(--pjm-dark);
+    font-family: inherit;
+    box-sizing: border-box;
+    /* Ważne dla paddingu */
+    height: 52px;
+    /* Stała wysokość dla inputów */
+}
+
+/* Textarea specyfika */
+.jm-input-group textarea {
+    resize: vertical;
+    min-height: 120px;
+    height: auto;
+    line-height: 1.5;
+}
+
+/* Etykieta (Label) */
+.jm-input-group label {
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--pjm-gray-light);
+    font-size: 14px;
+    transition: 0.2s ease-in-out;
+    pointer-events: none;
+    /* Kliknięcie przechodzi do inputa */
+    background-color: transparent;
+    padding: 0 4px;
+    z-index: 1;
+}
+
+/* Korekta pozycji labela dla textarea */
+.jm-input-group textarea~label {
+    top: 20px;
+    transform: none;
+}
+
+/* Active State (Focus or Filled) */
+.jm-input-group input:focus,
+.jm-input-group textarea:focus,
+.jm-input-group select:focus {
+    border-color: var(--pjm-orange);
+    box-shadow: 0 4px 15px rgba(27, 94, 75, 0.1);
+    /* Subtelny glow */
+    background-color: #fff;
+}
+
+/* Floating Label Animation (Uniesienie etykiety) */
+.jm-input-group input:focus~label,
+.jm-input-group input:not(:placeholder-shown)~label,
+.jm-input-group textarea:focus~label,
+.jm-input-group textarea:not(:placeholder-shown)~label,
+.jm-input-group select:focus~label,
+.jm-input-group select:not(:placeholder-shown)~label {
+    top: -10px;
+    transform: translateY(0);
+    left: 12px;
+    font-size: 11px;
+    background: var(--pjm-white);
+    /* Przykrywa ramkę */
+    color: var(--pjm-orange);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    z-index: 2;
+}
+
+/* Readonly fields (np. email w edycji) */
+.jm-input-group input:read-only {
+    background-color: #f9f9f9;
+    border-color: #eee;
+    color: #888;
+    cursor: not-allowed;
+}
+
+/* Fix dla Selecta (aby placeholder nie mieszał) */
+.jm-input-group select {
+    appearance: none;
+    /* Ukrywa domyślną strzałkę przeglądarki */
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23999%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px top 50%;
+    background-size: 10px auto;
+}
+
+/* --- 3. INPUT ICONS (Dla logowania/rejestracji) --- */
+/* Ikona wewnątrz pola po lewej stronie */
+.jm-input-group .icon-left {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--pjm-gray-light);
+    font-size: 20px;
+    /* Nieco mniejsza, by nie dominowała */
+    pointer-events: none;
+    z-index: 2;
+    transition: var(--transition);
+}
+
+/* Przesunięcie tekstu gdy jest ikona */
+.jm-input-group:has(.icon-left) input {
+    padding-left: 45px;
+}
+
+/* Przesunięcie labela gdy jest ikona */
+.jm-input-group:has(.icon-left) label {
+    left: 45px;
+}
+
+/* Kolor ikony przy focusie */
+.jm-input-group input:focus~.icon-left {
+    color: var(--pjm-orange);
+}
+
+/* Reset pozycji labela, gdy jest uniesiony (powrót nad ramkę) */
+.jm-input-group:has(.icon-left) input:focus~label,
+.jm-input-group:has(.icon-left) input:not(:placeholder-shown)~label {
+    left: 12px;
+    /* Standardowa pozycja uniesionego labela */
+}
+
+/* --- 4. RADIO & CHECKBOX CARDS (Kafelki wyboru) --- */
+.jm-radio-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 20px;
+    background: var(--pjm-white);
+    border: 2px solid var(--pjm-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.jm-radio-option input[type="radio"],
+.jm-radio-option input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--pjm-orange);
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.jm-radio-option:hover {
+    border-color: #bdc3c7;
+    background: #fafafa;
+}
+
+/* Stan zaznaczony */
+.jm-radio-option:has(input:checked) {
+    border-color: var(--pjm-orange);
+    background: #fffdf9;
+    /* Bardzo jasny pomarańcz */
+    box-shadow: var(--shadow-sm);
+}
+
+/* Wariant: Polecany (np. PayU - zielony) */
+.jm-radio-option.featured {
+    border-color: #8BC34A;
+    /* Jasny zielony */
+}
+
+.jm-radio-option.featured:has(input:checked) {
+    background: #f1f8e9;
+    border-color: #7cb342;
+}
+
+/* Wariant: Portfel (Fioletowy) */
+.jm-radio-option.wallet-option {
+    border-color: #9C27B0;
+}
+
+.jm-radio-option.wallet-option:has(input:checked) {
+    background: #f3e5f5;
+    border-color: #7b1fa2;
+}
+
+/* Typografia wewnątrz kafelka */
+.opt-content {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.opt-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--pjm-dark);
+}
+
+.opt-desc {
+    font-size: 12px;
+    color: var(--pjm-gray-light);
+}
+
+.opt-cost {
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--pjm-dark);
+    margin-left: auto;
+    /* Pycha cenę do prawej */
+}
+
+/* --- 5. SWITCHERS (Przełączniki) --- */
+
+/* Segmented Control (Np. Osoba / Firma) - Klasyczny styl "tab" */
+.jm-client-type-switch {
+    display: flex;
+    background: #f0f2f5;
+    padding: 4px;
+    border-radius: var(--radius-md);
+    margin-bottom: 30px;
+    border: 1px solid var(--pjm-border);
+}
+
+.jm-client-type-switch label {
+    flex: 1;
+    position: relative;
+    text-align: center;
+    padding: 10px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 14px;
+    color: var(--pjm-gray-text);
+    transition: var(--transition);
+    border-radius: 6px;
+    /* Nieco mniejszy radius wewnątrz */
+    z-index: 2;
+}
+
+.jm-client-type-switch input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Aktywny stan segmentu */
+.jm-client-type-switch label:has(input:checked) {
+    background: var(--pjm-white);
+    color: var(--pjm-dark);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
+}
+
+/* Animated Slider Switch (Np. Logowanie / Rejestracja) */
+.pjm-role-switcher {
+    display: flex;
+    position: relative;
+    background: #f0f2f5;
+    padding: 4px;
+    border-radius: 50px;
+    /* Pill shape */
+    margin-bottom: 30px;
+    border: 1px solid var(--pjm-border);
+    overflow: hidden;
+}
+
+.switch-btn {
+    flex: 1;
+    text-align: center;
+    padding: 12px;
+    cursor: pointer;
+    z-index: 2;
+    font-weight: 700;
+    font-size: 14px;
+    color: var(--pjm-gray-light);
+    transition: color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.switch-btn input {
+    display: none;
+}
+
+.switch-btn.active {
+    color: var(--pjm-white);
+}
+
+/* Slider tła */
+.switch-slider {
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: calc(50% - 4px);
+    height: calc(100% - 8px);
+    background: var(--pjm-orange);
+    border-radius: 40px;
+    transition: transform 0.3s cubic-bezier(0.45, 0.05, 0.55, 0.95);
+    z-index: 1;
+    box-shadow: 0 2px 8px rgba(27, 94, 75, 0.3);
+}
+
+/* Przesunięcie slidera gdy drugi element aktywny */
+.switch-btn:nth-child(2).active~.switch-slider {
+    transform: translateX(100%);
+}
+
+/* --- 6. UTILITIES & HELPERS --- */
+
+/* Walidator Hasła */
+.pjm-password-validator {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-top: 15px;
+    padding: 12px;
+    background: #f9f9f9;
+    border-radius: var(--radius-md);
+    border: 1px solid #eee;
+}
+
+.validator-item {
+    font-size: 12px;
+    color: var(--pjm-gray-light);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: var(--transition);
+}
+
+.validator-item .icon {
+    font-size: 14px;
+}
+
+.validator-item.valid {
+    color: var(--pjm-success);
+    font-weight: 600;
+}
+
+/* Upload Box (Drag & Drop) - np. Avatar, Pliki */
+.pjm-upload-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+    border: 2px dashed var(--pjm-border);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    background: #fafafa;
+    transition: var(--transition);
+    text-align: center;
+    gap: 10px;
+}
+
+.pjm-upload-box:hover,
+.pjm-upload-box.dragover {
+    border-color: var(--pjm-orange);
+    background: #fffbf5;
+    color: var(--pjm-orange);
+}
+
+.pjm-upload-box .material-symbols-rounded {
+    font-size: 32px;
+    color: #ccc;
+    transition: 0.2s;
+}
+
+.pjm-upload-box:hover .material-symbols-rounded {
+    color: var(--pjm-orange);
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* Podgląd Avatara */
+.preview-area {
+    margin-top: 15px;
+    width: 80px;
+    height: 80px;
+    position: relative;
+}
+
+.preview-area img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--pjm-white);
+    box-shadow: var(--shadow-sm);
+}
+
+/* Checkbox (Zgody / Legal) */
+.jm-legal {
+    display: flex;
+    align-items: flex-start;
+    /* Wyrównanie do góry przy długim tekście */
+    gap: 12px;
+    margin: 20px 0;
+    font-size: 13px;
+    color: var(--pjm-gray-text);
+    line-height: 1.5;
+}
+
+.jm-legal input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    accent-color: var(--pjm-orange);
+    cursor: pointer;
+    margin-top: 2px;
+    /* Optyczne wyrównanie */
+}
+
+.jm-legal a {
+    color: var(--pjm-orange);
+    text-decoration: underline;
+}
+
+.jm-legal a:hover {
+    color: var(--pjm-orange-hover);
+}
+
+/* --- WALIDACJA --- */
+.pjm-input.error-field {
+    border-color: #e74c3c !important;
+    background-color: #fdf2f2 !important;
+    animation: shake 0.3s ease-in-out;
+}
+
+@keyframes shake {
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-5px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+/* --- OPISY DODATKÓW --- */
+.pjm-addon-desc {
+    display: block;
+    font-size: 11px;
+    color: #95a5a6;
+    margin-top: 2px;
+    line-height: 1.3;
+}
+
+/* --- LICZNIK ILOŚCI (COUNTER) --- */
+.pjm-qty-wrapper {
+    display: flex;
+    align-items: center;
+    background: #f0f2f5;
+    border-radius: 6px;
+    padding: 2px;
+}
+
+.pjm-btn-qty {
+    width: 28px;
+    height: 28px;
+    border: none;
+    background: #fff;
+    color: #333;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.pjm-btn-qty:hover:not(:disabled) {
+    background: var(--pjm-orange);
+    color: #fff;
+}
+
+.pjm-btn-qty:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pjm-addon-qty-input {
+    width: 30px;
+    text-align: center;
+    border: none;
+    background: transparent;
+    font-weight: 700;
+    font-size: 13px;
+    color: #333;
+    appearance: none;
+    -moz-appearance: textfield;
+}
+
+.pjm-addon-qty-input::-webkit-outer-spin-button,
+.pjm-addon-qty-input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

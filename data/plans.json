@@ -1,0 +1,108 @@
+{
+  "settings": {
+    "yearly_months_pay": 11,
+    "vat_rate": "zw",
+    "rollover_percentage": 30
+  },
+  "unit_definitions": {
+    "video_minutes": 5, 
+    "text_chars": 1800,
+    "event_hours": 1
+  },
+  "plans": {
+    "basic": {
+      "id": "basic",
+      "name": "Podstawowy",
+      "subtitle": "Na start",
+      "price": 1350,
+      "limit_val": 3,
+      "limit_label": "MIESIĘCZNIE",
+      "time": "7 dni",
+      "features": {
+        "loop": { "type": "discount", "value": 0.10 },
+        "consultation": { "hours": 0 },
+        "certificate": false
+      },
+      "overage_discount": 0.10,
+      "stripe_price_ids": {
+        "monthly": "price_1Sxm0ZJ9MwzX4YJcXgkNFOuk", 
+        "yearly": "price_1Sxm0ZJ9MwzX4YJciz9A0gt5"
+      }
+    },
+    "standard": {
+      "id": "standard",
+      "name": "Standard",
+      "subtitle": "Regularne działanie",
+      "price": 2800,
+      "limit_val": 6,
+      "limit_label": "MIESIĘCZNIE",
+      "time": "5 dni",
+      "features": {
+        "loop": { "type": "discount", "value": 0.15 },
+        "consultation": { "hours": 1 },
+        "certificate": false
+      },
+      "overage_discount": 0.15,
+      "stripe_price_ids": {
+        "monthly": "price_1Sxtp6J9MwzX4YJcE0ZRmjvH", 
+        "yearly": "price_1SxtpZJ9MwzX4YJcndPFzIDZ"
+      }
+    },
+    "plus": {
+      "id": "plus",
+      "name": "Plus",
+      "subtitle": "Szerokie dotarcie",
+      "price": 4300,
+      "limit_val": 9,
+      "limit_label": "MIESIĘCZNIE",
+      "time": "5 dni",
+      "is_featured": true,
+      "badge": "NAJCZĘŚCIEJ WYBIERANY",
+      "features": {
+        "loop": { "type": "free_token", "frequency_months": 3, "days": 1 },
+        "consultation": { "hours": 2 },
+        "certificate": false
+      },
+      "overage_discount": 0.20,
+      "stripe_price_ids": {
+        "monthly": "price_1SxtqwJ9MwzX4YJcsx2rVCp2", 
+        "yearly": "price_1SxtrTJ9MwzX4YJc8HycLhwD"
+      }
+    },
+    "pro": {
+      "id": "pro",
+      "name": "Pro",
+      "subtitle": "Duża Instytucja",
+      "price": 9500,
+      "limit_val": 18,
+      "limit_label": "MIESIĘCZNIE",
+      "time": "3 dni",
+      "badge": "DLA INSTYTUCJI",
+      "features": {
+        "loop": { "type": "free_token", "frequency_months": 1, "days": 1 },
+        "consultation": { "hours": 3 },
+        "certificate": true
+      },
+      "overage_discount": 0.25,
+      "stripe_price_ids": {
+        "monthly": "price_1Sxts2J9MwzX4YJc19Qj7HR5", 
+        "yearly": "price_1SxtsLJ9MwzX4YJc9CPgx12v"
+      }
+    },
+    "premium": {
+      "id": "premium",
+      "name": "Premium",
+      "subtitle": "Lider Dostępności",
+      "price": 0,
+      "limit_val": "INDYWIDUALNIE",
+      "limit_label": "INDYWIDUALNIE",
+      "time": "2 dni",
+      "features": {
+        "loop": { "type": "full_support" },
+        "consultation": { "hours": 999 },
+        "certificate": true
+      },
+      "overage_discount": 0.30
+    }
+  }
+}
